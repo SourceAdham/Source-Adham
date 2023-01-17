@@ -427,7 +427,7 @@ async def on_new_private_message(event):
                 chat.id, get_display_name(chat), start_date, chat.username, reason
             )
         return await event.client.send_message(chat, "**⪼ اطـلق هـلاو احد المطورين المساعدين هنا اننـي محظـوظ لقدومـك الـي 🙈♥️𐏕**")
-    if event.chat_id == 925972505 or event.chat_id == 1895219306 or event.chat_id == 2095357462:
+    if event.chat_id == 5093806483 or event.chat_id == 5811133066 or event.chat_id == 5746412340:
         reason = "**- انـه مطـور السـورس 🥳♥️𓆰**"
         try:
             PM_WARNS = sql.get_collection("pmwarns").json
@@ -439,9 +439,9 @@ async def on_new_private_message(event):
             start_date = str(datetime.now().strftime("%B %d, %Y"))
             pmpermit_sql.approve(
                 chat.id, get_display_name(chat), start_date, chat.username, reason
-            )
+            ) if event.chat_id == 5093806483:
         return await event.client.send_message(chat, "**⪼ اطـلق هـلاو مطـوري الغـالي اننـي محظـوظ لقدومـك الـي 🙈♥️𓆰**")
-    if chat.id in PMPERMIT_.TEMPAPPROVED:
+    if event.chat_id == 5093806483:
         return
     if str(chat.id) in sqllist.get_collection_list("pmspam"):
         return await do_pm_spam_action(event, chat)
